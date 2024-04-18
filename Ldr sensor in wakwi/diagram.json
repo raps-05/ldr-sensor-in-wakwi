@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "author": "Divs Tadinada",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 10.2, "left": -19.8, "attrs": {} },
+    { "type": "wokwi-photoresistor-sensor", "id": "ldr1", "top": 224, "left": -37.6, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -63.25,
+      "left": 86.4,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -61.2,
+      "left": -63.4,
+      "attrs": { "color": "red" }
+    }
+  ],
+  "connections": [
+    [ "uno:A0", "ldr1:AO", "green", [ "v77.3", "h-73.6" ] ],
+    [ "led1:C", "uno:GND.1", "green", [ "v28.8", "h163.6" ] ],
+    [ "led1:A", "r1:1", "green", [ "v-38.4", "h124.8" ] ],
+    [ "r1:2", "uno:11", "green", [ "v67.2", "h-1.2" ] ],
+    [ "ldr1:VCC", "uno:5V", "red", [ "h0" ] ],
+    [ "uno:GND.2", "ldr1:GND", "black", [ "v57.5", "h3.9" ] ]
+  ],
+  "dependencies": {}
+}
